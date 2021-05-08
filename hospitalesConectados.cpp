@@ -151,11 +151,25 @@ void ejecucion() {
 
     cin>>fin;
 
+    
+
     if(distancia[fin]!=INF) {
 
-        cout<< "La ruta minima entre el hospital de "<<capitales.at(inicio)<< " y " <<capitales.at(fin)<< " es " << distancia[fin] << " km. "<< endl;
+        if(inicio!=fin) {
+
+            cout<< "La ruta minima entre el hospital de "<<capitales.at(inicio)<< " y " <<capitales.at(fin)<< " es " << distancia[fin] << " km. "<< endl;
+
+        } else {
+
+            cout<< "Usted ha digitado la misma ubicacion para punto de partida y destino, por favor, digite numeros diferentes"<<endl;
+
+        }
+
+       
 
     }
+
+    
 
     cout<<"Digite 0 para hacer otra consulta y 1 para salir"<<endl;
 
