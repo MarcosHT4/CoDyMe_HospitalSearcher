@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <cstdlib>
 #include <dos.h>
 #define INF 100000010
 using namespace std;
@@ -6,6 +7,7 @@ using namespace std;
 
 vector<pair<int, int> > grafo[100000];
 vector<string> capitales;
+vector<string> ejemplo;
 int inicio;
 int fin;
 int regreso;
@@ -175,6 +177,92 @@ void llenarGrafo(int continente) {
 
 
 void tutorial() {
+
+    grafo[0].push_back(make_pair(1427, 1));
+    grafo[1].push_back(make_pair(1344, 2));
+    grafo[2].push_back(make_pair(593, 4));  
+    grafo[4].push_back(make_pair(1407, 5));
+    grafo[5].push_back(make_pair(3286, 6));
+    grafo[6].push_back(make_pair(1802, 7));
+    grafo[7].push_back(make_pair(1103, 8));
+    grafo[8].push_back(make_pair(1400, 9));
+    grafo[2].push_back(make_pair(2903, 3));
+    grafo[3].push_back(make_pair(2755, 10));
+    grafo[10].push_back(make_pair(444, 11));
+    grafo[11].push_back(make_pair(336, 12));
+    grafo[0].push_back(make_pair(2033, 6));
+
+    grafo[1].push_back(make_pair(1427, 0));
+    grafo[2].push_back(make_pair(1344, 1));
+    grafo[4].push_back(make_pair(593, 2));
+    grafo[5].push_back(make_pair(1407, 4));
+    grafo[6].push_back(make_pair(3286, 5));
+    grafo[7].push_back(make_pair(1802, 6));
+    grafo[8].push_back(make_pair(1103, 7));
+    grafo[9].push_back(make_pair(1400, 8));
+    grafo[3].push_back(make_pair(2903, 2));
+    grafo[10].push_back(make_pair(2755, 3));
+    grafo[11].push_back(make_pair(444, 10));
+    grafo[12].push_back(make_pair(336, 11));
+    grafo[6].push_back(make_pair(2033, 0));
+
+    
+
+    ejemplo.push_back("Sucre");
+    ejemplo.push_back("Asuncion");
+    ejemplo.push_back("Montevideo");
+    ejemplo.push_back("Brasilia");
+    ejemplo.push_back("Buenos Aires");
+    ejemplo.push_back("Santiago");
+    ejemplo.push_back("Lima");
+    ejemplo.push_back("Quito");
+    ejemplo.push_back("Bogota");
+    ejemplo.push_back("Caracas");
+    ejemplo.push_back("GeorgeTown");
+    ejemplo.push_back("Paramaribo");
+    ejemplo.push_back("Cayena");
+
+    cout<<"Bienvenido al tutorial de la herramienta CoDyMe_HospitalSearcher!" << endl;
+    cout<<"Esta herramienta le permitira encontrar la distancia mas corta entre dos de nuestros hospitales afiliados" << endl;
+    cout<<"Nuestros hospitales se encuentran en las capitales de los paises mas importantes de Sudamerica y Europa " << endl;
+    cout<< "Entre estos 3 continentes, tenemos mas de 30 hospitales a su disposicion!" << endl;
+    cout<<" Elaboremos un ejemplo: " << endl;
+    cout<<"Usaremos el continente de Sudamerica, que tiene los siguientes paises:"<<endl;
+
+    for(int i = 0; i<ejemplo.size(); i++) {
+
+        cout<<i<<": "<<ejemplo.at(i)<<endl;
+
+    }
+
+    srand(time(0));
+    int r = 1+ (rand()%12) ;
+    cout<<"Ahora usaremos un pais al azar como punto de partida, en este caso: "<< ejemplo.at(r)<<endl;
+    cout<<"Ahora usaremos otro pais al azar como punto de llegada, en este caso: ";
+    int t = 1+ (rand()%12);
+
+    while(t==r) {
+
+        t = 1+ (rand()%12);
+
+    }
+
+    cout<<ejemplo.at(t)<<endl;
+
+    dijkstra(r);
+
+    cout<<"Usaremos el algoritmo de Dijkstra, para obtener el camino minimo entre estas dos capitales"<<endl;
+    cout<< "La ruta minima entre el hospital de "<<ejemplo.at(r)<< " y " <<ejemplo.at(t)<< " es " << distancia[t] << " km. "<< endl;
+
+    
+
+
+
+
+
+
+
+
 
     
 
