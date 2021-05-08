@@ -178,33 +178,7 @@ void llenarGrafo(int continente) {
 
 void tutorial() {
 
-    grafo[0].push_back(make_pair(1427, 1));
-    grafo[1].push_back(make_pair(1344, 2));
-    grafo[2].push_back(make_pair(593, 4));  
-    grafo[4].push_back(make_pair(1407, 5));
-    grafo[5].push_back(make_pair(3286, 6));
-    grafo[6].push_back(make_pair(1802, 7));
-    grafo[7].push_back(make_pair(1103, 8));
-    grafo[8].push_back(make_pair(1400, 9));
-    grafo[2].push_back(make_pair(2903, 3));
-    grafo[3].push_back(make_pair(2755, 10));
-    grafo[10].push_back(make_pair(444, 11));
-    grafo[11].push_back(make_pair(336, 12));
-    grafo[0].push_back(make_pair(2033, 6));
-
-    grafo[1].push_back(make_pair(1427, 0));
-    grafo[2].push_back(make_pair(1344, 1));
-    grafo[4].push_back(make_pair(593, 2));
-    grafo[5].push_back(make_pair(1407, 4));
-    grafo[6].push_back(make_pair(3286, 5));
-    grafo[7].push_back(make_pair(1802, 6));
-    grafo[8].push_back(make_pair(1103, 7));
-    grafo[9].push_back(make_pair(1400, 8));
-    grafo[3].push_back(make_pair(2903, 2));
-    grafo[10].push_back(make_pair(2755, 3));
-    grafo[11].push_back(make_pair(444, 10));
-    grafo[12].push_back(make_pair(336, 11));
-    grafo[6].push_back(make_pair(2033, 0));
+    llenarGrafo(1);
 
     
 
@@ -271,6 +245,8 @@ void tutorial() {
 }
 
 void ejecucion() {
+
+    capitales.clear();
 
 
     cout<< "Introduzca su continente" << endl;
