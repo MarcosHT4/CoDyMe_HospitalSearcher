@@ -101,6 +101,65 @@ void llenarGrafo(int continente) {
 
             break;
 
+        case 2:
+
+            grafo[0].push_back(make_pair(1090, 1));
+            grafo[1].push_back(make_pair(978, 2));
+            grafo[1].push_back(make_pair(484, 3));
+            grafo[3].push_back(make_pair(959, 4));
+            grafo[4].push_back(make_pair(550, 5));
+            grafo[5].push_back(make_pair(572, 6));
+            grafo[5].push_back(make_pair(688, 7));
+            grafo[5].push_back(make_pair(662, 8));
+            grafo[4].push_back(make_pair(526, 9));
+            grafo[9].push_back(make_pair(1847, 10));
+            grafo[9].push_back(make_pair(1848, 11));
+            grafo[9].push_back(make_pair(472, 12));
+            grafo[10].push_back(make_pair(2964, 11));
+            grafo[11].push_back(make_pair(1854, 12));
+            grafo[11].push_back(make_pair(276, 14));
+            grafo[14].push_back(make_pair(1398, 15));
+            grafo[10].push_back(make_pair(1469, 13));
+
+            grafo[1].push_back(make_pair(1090, 0));
+            grafo[2].push_back(make_pair(978, 1));
+            grafo[3].push_back(make_pair(484, 1));
+            grafo[4].push_back(make_pair(959, 3));
+            grafo[5].push_back(make_pair(550, 4));
+            grafo[6].push_back(make_pair(572, 5));
+            grafo[7].push_back(make_pair(688, 5));
+            grafo[8].push_back(make_pair(662, 5));
+            grafo[9].push_back(make_pair(526, 4));
+            grafo[10].push_back(make_pair(1847, 9));
+            grafo[11].push_back(make_pair(1848, 9));
+            grafo[12].push_back(make_pair(472, 9));
+            grafo[11].push_back(make_pair(2964, 10));
+            grafo[12].push_back(make_pair(1854, 11));
+            grafo[14].push_back(make_pair(276, 11));
+            grafo[15].push_back(make_pair(1398, 14));
+            grafo[13].push_back(make_pair(1469, 10));
+
+            capitales.push_back("Moscu");
+            capitales.push_back("Helsinki");
+            capitales.push_back("Oslo");
+            capitales.push_back("Estocolmo");
+            capitales.push_back("Minsk");
+            capitales.push_back("Varsovia");
+            capitales.push_back("Berlin");
+            capitales.push_back("Praga");
+            capitales.push_back("Bratislava");
+            capitales.push_back("Kiev");
+            capitales.push_back("Budapest");
+            capitales.push_back("Tiflis");
+            capitales.push_back("Chisinau");
+            capitales.push_back("Atenas");
+            capitales.push_back("Erevan");
+            capitales.push_back("Ankara");
+            
+            break;
+            
+
+
 
 
     }
@@ -125,9 +184,10 @@ void tutorial() {
 
 void ejecucion() {
 
+
     cout<< "Introduzca su continente" << endl;
     cout<< "1. SudAmerica" << endl;
-    cout<< "2. Europa" << endl;
+    cout<< "2. Europa del Este" << endl;
 
     cin>>continente;
 
