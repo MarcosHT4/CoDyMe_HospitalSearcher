@@ -17,10 +17,10 @@ int distancia[100000];
 
 void dijkstra(int verticeInicial)
 {
-    for(int i = 0; i < 100000; i++)
+    for(int i = 0; i < 100000; i++){
         distancia[i] = INF;
 
-
+    }
     memset(visitados, 0, sizeof(visitados));
 
     multiset<pair<int, int> > colaPrioridad;
@@ -200,6 +200,135 @@ void llenarGrafo(int continente) {
             break;
             
 
+        case 4:
+
+           grafo[0].push_back(make_pair(600, 1));
+           grafo[0].push_back(make_pair(432, 2));
+           grafo[2].push_back(make_pair(20, 4));
+           grafo[0].push_back(make_pair(103, 3));
+
+           grafo[1].push_back(make_pair(600, 0));
+           grafo[2].push_back(make_pair(432, 0));
+           grafo[4].push_back(make_pair(20, 2));
+           grafo[3].push_back(make_pair(103, 0));
+
+           capitales.push_back("Palestina");
+           capitales.push_back("Imperio Romano");
+           capitales.push_back("Rodesia");
+           capitales.push_back("Vietnam Del Sur");
+           capitales.push_back("Zanzibar");
+
+           break;
+
+        case 5:
+
+           grafo[0].push_back(make_pair(700, 1));
+           grafo[1].push_back(make_pair(50, 2));
+           grafo[1].push_back(make_pair(150, 3));
+           grafo[1].push_back(make_pair(300, 4));
+
+           grafo[1].push_back(make_pair(700, 0));
+           grafo[2].push_back(make_pair(50, 1));
+           grafo[3].push_back(make_pair(150, 1));
+           grafo[4].push_back(make_pair(300, 1));
+
+           capitales.push_back("Union Sovietica");
+           capitales.push_back("Corea Del Norte");
+           capitales.push_back("Pemba");
+           capitales.push_back("Mozambique");
+           capitales.push_back("Darfur");
+
+           break;  
+           
+        case 6:
+
+           grafo[0].push_back(make_pair(60, 1));
+           grafo[1].push_back(make_pair(490, 2));
+           grafo[0].push_back(make_pair(620, 3));
+           grafo[3].push_back(make_pair(3002, 4));
+
+           grafo[1].push_back(make_pair(60, 0));
+           grafo[2].push_back(make_pair(490, 1));
+           grafo[3].push_back(make_pair(620, 0));
+           grafo[4].push_back(make_pair(3002, 3));
+
+           capitales.push_back("Imperio Thalia");
+           capitales.push_back("Dinastia Koteron");
+           capitales.push_back("Imperio Tribbitus");
+           capitales.push_back("Dinastia Criten");
+           capitales.push_back("Dinastia Teonem");
+
+           break;  
+
+        case 7:
+
+           grafo[0].push_back(make_pair(10, 1));
+           grafo[1].push_back(make_pair(75, 3));
+           grafo[3].push_back(make_pair(242, 4));
+           grafo[1].push_back(make_pair(501, 2));
+
+           grafo[1].push_back(make_pair(10, 0));
+           grafo[3].push_back(make_pair(75, 1));
+           grafo[4].push_back(make_pair(242, 3));
+           grafo[2].push_back(make_pair(501, 1));
+
+           capitales.push_back("Irania");
+           capitales.push_back("Lotus");
+           capitales.push_back("Ugevaria");
+           capitales.push_back("Dinada");
+           capitales.push_back("Atoseo");
+
+           break;
+
+        case 8:
+
+           grafo[0].push_back(make_pair(21, 1));
+           grafo[1].push_back(make_pair(45, 2));
+           grafo[0].push_back(make_pair(275, 3));
+           grafo[3].push_back(make_pair(534, 4));
+
+           grafo[1].push_back(make_pair(21, 0));
+           grafo[2].push_back(make_pair(45, 1));
+           grafo[3].push_back(make_pair(275, 0));
+           grafo[4].push_back(make_pair(534, 3));
+
+           capitales.push_back("Atenas");
+           capitales.push_back("Atlantis");
+           capitales.push_back("Ciudadela Olimpica");
+           capitales.push_back("Ciudad Griega");
+           capitales.push_back("Crisa");   
+
+           break;
+
+        case 9:
+
+            grafo[0].push_back(make_pair(563, 1));
+            grafo[1].push_back(make_pair(248, 2));
+            grafo[1].push_back(make_pair(875, 4));
+            grafo[2].push_back(make_pair(654, 3));
+
+            grafo[1].push_back(make_pair(563, 0));
+            grafo[2].push_back(make_pair(248, 1));
+            grafo[4].push_back(make_pair(875, 1));
+            grafo[3].push_back(make_pair(654, 2));
+
+            capitales.push_back("Slug Giant");
+            capitales.push_back("Slug Flyer");
+            capitales.push_back("Lemor");
+            capitales.push_back("Servil");
+            capitales.push_back("Astrolug");  
+
+            break;
+
+
+
+           
+
+
+
+
+           
+
 
 
             
@@ -222,77 +351,12 @@ void llenarGrafo(int continente) {
 }
 
 
-void tutorial() {
 
-    llenarGrafo(1);
-
-    
-
-    ejemplo.push_back("Sucre");
-    ejemplo.push_back("Asuncion");
-    ejemplo.push_back("Montevideo");
-    ejemplo.push_back("Brasilia");
-    ejemplo.push_back("Buenos Aires");
-    ejemplo.push_back("Santiago");
-    ejemplo.push_back("Lima");
-    ejemplo.push_back("Quito");
-    ejemplo.push_back("Bogota");
-    ejemplo.push_back("Caracas");
-    ejemplo.push_back("GeorgeTown");
-    ejemplo.push_back("Paramaribo");
-    ejemplo.push_back("Cayena");
-
-    cout<<"Bienvenido al tutorial de la herramienta CoDyMe_HospitalSearcher!" << endl;
-    cout<<"Esta herramienta le permitira encontrar la distancia mas corta entre dos de nuestros hospitales afiliados" << endl;
-    cout<<"Nuestros hospitales se encuentran en las capitales de los paises mas importantes de Sudamerica y Europa " << endl;
-    cout<< "Entre estos 2 continentes, tenemos mas de 30 hospitales a su disposicion!" << endl;
-    cout<<" Elaboremos un ejemplo: " << endl;
-    cout<<"Usaremos el continente de Sudamerica, que tiene los siguientes paises:"<<endl;
-
-    for(int i = 0; i<ejemplo.size(); i++) {
-
-        cout<<i<<": "<<ejemplo.at(i)<<endl;
-
-    }
-
-    srand(time(0));
-    int r = 1+ (rand()%12) ;
-    cout<<"Ahora usaremos un pais al azar como punto de partida, en este caso: "<< ejemplo.at(r)<<endl;
-    cout<<"Ahora usaremos otro pais al azar como punto de llegada, en este caso: ";
-    int t = 1+ (rand()%12);
-
-    while(t==r) {
-
-        t = 1+ (rand()%12);
-
-    }
-
-    cout<<ejemplo.at(t)<<endl;
-
-    dijkstra(r);
-
-    cout<<"Usaremos el algoritmo de Dijkstra, para obtener el camino minimo entre estas dos capitales"<<endl;
-    cout<< "La ruta minima entre el hospital de "<<ejemplo.at(r)<< " y " <<ejemplo.at(t)<< " es " << distancia[t] << " km. "<< endl;
-
-    
-
-
-
-
-
-
-
-
-
-    
-
-
-
-}
 
 void ejecucion() {
 
     capitales.clear();
+    ejemplo.clear();
 
 
     cout<< "Introduzca su continente" << endl;
@@ -365,12 +429,192 @@ void ejecucion() {
 
     }
 
+
+
+}
+
+void tutorial() {
+
+    ejemplo.clear();
+
+    llenarGrafo(1);
+
     
-    
+
+    ejemplo.push_back("Sucre");
+    ejemplo.push_back("Asuncion");
+    ejemplo.push_back("Montevideo");
+    ejemplo.push_back("Brasilia");
+    ejemplo.push_back("Buenos Aires");
+    ejemplo.push_back("Santiago");
+    ejemplo.push_back("Lima");
+    ejemplo.push_back("Quito");
+    ejemplo.push_back("Bogota");
+    ejemplo.push_back("Caracas");
+    ejemplo.push_back("GeorgeTown");
+    ejemplo.push_back("Paramaribo");
+    ejemplo.push_back("Cayena");
+
+    cout<<"Bienvenido al tutorial de la herramienta CoDyMe_HospitalSearcher!" << endl;
+    cout<<"Esta herramienta le permitira encontrar la distancia mas corta entre dos de nuestros hospitales afiliados" << endl;
+    cout<<"Nuestros hospitales se encuentran en las capitales de los paises mas importantes de Sudamerica y Europa " << endl;
+    cout<< "Entre estos 2 continentes, tenemos mas de 30 hospitales a su disposicion!" << endl;
+    cout<<" Elaboremos un ejemplo: " << endl;
+    cout<<"Usaremos el continente de Sudamerica, que tiene los siguientes paises:"<<endl;
+
+    for(int i = 0; i<ejemplo.size(); i++) {
+
+        cout<<i<<": "<<ejemplo.at(i)<<endl;
+
+    }
+
+    srand(time(0));
+    int r = 1+ (rand()%12) ;
+    cout<<"Ahora usaremos un pais al azar como punto de partida, en este caso: "<< ejemplo.at(r)<<endl;
+    cout<<"Ahora usaremos otro pais al azar como punto de llegada, en este caso: ";
+    int t = 1+ (rand()%12);
+
+    while(t==r) {
+
+        t = 1+ (rand()%12);
+
+    }
+
+    cout<<ejemplo.at(t)<<endl;
+
+    dijkstra(r);
+
+    cout<<"Usaremos el algoritmo de Dijkstra, para obtener el camino minimo entre estas dos capitales"<<endl;
+    cout<< "La ruta minima entre el hospital de "<<ejemplo.at(r)<< " y " <<ejemplo.at(t)<< " es " << distancia[t] << " km. "<< endl;
+    cout<< "Ahora que usted ya conoce la aplicacion, que desea hacer?"<<endl;
+
+    cout<<"Digite 0 para una consulta y 1 para salir"<<endl;
+
+    cin>>regreso;
+
+    switch(regreso) {
+
+        case 0:
+          capitales.clear();
+          ejecucion();
+          break;
+
+        case 1:
+          cout<<"Muchas gracias por confiar en nosotros! :D" <<endl;
+          break;
 
 
 
-    
+    }
+
+
+
+}
+
+void ejemplos() {
+
+    capitales.clear();
+
+    cout<<"Digite cual ejemplo quiere visualizar, del 1 al 6"<<endl;
+    int ejemplo;
+    cin>>ejemplo;
+
+    string nombreContinente;
+    vector<int> rutas;
+
+    switch(ejemplo) {
+
+        case 1:
+           
+           nombreContinente = "Lemuria";
+           llenarGrafo(4);
+           break;
+
+        case 2:
+
+            nombreContinente = "Atlantida";
+            llenarGrafo(5);
+            break;
+
+        case 3:
+
+            nombreContinente = "Wakanda";
+            llenarGrafo(6);
+            break;
+
+        case 4:
+
+            nombreContinente = "Zootopia";
+            llenarGrafo(7);
+            break;    
+
+        case 5:
+
+            nombreContinente = "GOW";
+            llenarGrafo(8);
+            break;
+
+        case 6:
+
+            nombreContinente = "Meslu";
+            llenarGrafo(9);
+            break;    
+
+
+    }
+
+    cout<<"Consideremos un continente imaginario, llamado: " <<nombreContinente << " que tiene los siguientes paises: " <<endl;
+
+    for(int i = 0; i<capitales.size(); i++) {
+
+        cout<<capitales.at(i)<<endl;
+
+    }
+
+    cout<<"Ahora, haremos un viaje desde " << capitales.at(0) << " hasta " << capitales.at(4) << endl;
+
+    for(int i = 0; i < 100000; i++){
+        distancia[i] = INF;
+
+    }
+
+    dijkstra(0);
+
+    cout<< "La ruta minima entre el hospital de "<<capitales.at(0)<< " y " <<capitales.at(4)<< " es " << distancia[4] << " km. "<< endl;
+
+    cout<< "Ahora que ya conoce los ejemplos, que desea hacer?" << endl;
+
+    cout<<"Digite 0 para una consulta, 1 para ver otro ejemplo y 2 para salir"<<endl;
+
+    cin>>regreso;
+
+    switch(regreso) {
+
+        case 0:
+          capitales.clear();
+          ejecucion();
+          break;
+
+        case 1:
+          
+          ejemplos();
+          break;
+
+        case 2:
+          
+          cout<<"Muchas gracias por confiar en nosotros! :D" <<endl;
+          break;
+
+
+
+
+
+    }
+
+
+
+     
+
 
 
 
@@ -380,6 +624,7 @@ void ejecucion() {
 int main()
 {
     capitales.clear();
+    ejemplo.clear();
 
     int menu;
 
@@ -389,7 +634,8 @@ int main()
 
     cout<<"1. Introducir partida y destino" << endl;
     cout<<"2. Tutorial" << endl;
-    cout <<"3. Salir" << endl;
+    cout<<"3. Ejemplos" << endl;
+    cout <<"4. Salir" << endl;
 
     cin>> menu;
 
@@ -406,6 +652,11 @@ int main()
             break;
 
         case 3:
+
+            ejemplos();
+            break;    
+
+        case 4:
 
             cout<< "Gracias por la visita! :)" << endl;
 
