@@ -19,7 +19,7 @@
 - Descargar e instalar [WinRar](https://www.winrar.es/descargas).
 - Descargar la última versión disponible de [Visual Studio Code](https://code.visualstudio.com/).
 - Seguir las instrucciones de instalación que proporciona el instalador de Visual Studio Code.
-- Descargar el compilador de C++11, llamado g++, mediante la descarga del instalador de [mingw] (https://www.fdi.ucm.es/profesor/luis/fp/devtools/MinGW.html).
+- Descargar el compilador de C++11, llamado g++, mediante la descarga del instalador de [mingw](https://www.fdi.ucm.es/profesor/luis/fp/devtools/MinGW.html).
 - Descomprimir el instalador, usando WinRar, en la ruta que usted desee.
 - Seguir las instrucciones de instalación del paquete que contiene el compilador. Recuerde la ruta de instalación.
 - Dirigirse a **Panel de control\Sistema y seguridad\Sistema** y apretar en el botón **Configuración avanzada del sistema**.
