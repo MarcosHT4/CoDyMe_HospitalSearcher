@@ -159,6 +159,52 @@ void llenarGrafo(int continente) {
             capitales.push_back("Ankara");
             
             break;
+
+        case 3:
+
+            grafo[0].push_back(make_pair(623, 1));
+            grafo[1].push_back(make_pair(1271, 2));
+            grafo[2].push_back(make_pair(582, 3));
+            grafo[3].push_back(make_pair(839, 4));
+            grafo[2].push_back(make_pair(313, 5));
+            grafo[5].push_back(make_pair(210, 6));
+            grafo[2].push_back(make_pair(1420, 7));
+            grafo[2].push_back(make_pair(373, 8));
+            grafo[1].push_back(make_pair(609, 9));
+            grafo[10].push_back(make_pair(464, 11));
+
+            grafo[1].push_back(make_pair(623, 0));
+            grafo[2].push_back(make_pair(1271, 1));
+            grafo[3].push_back(make_pair(582, 2));
+            grafo[4].push_back(make_pair(839, 3));
+            grafo[5].push_back(make_pair(313, 2));
+            grafo[6].push_back(make_pair(210, 5));
+            grafo[7].push_back(make_pair(1420, 2));
+            grafo[8].push_back(make_pair(373, 2));
+            grafo[9].push_back(make_pair(609, 1));
+            grafo[11].push_back(make_pair(464, 10));
+
+            capitales.push_back("Lisboa");
+            capitales.push_back("Madrid");
+            capitales.push_back("Paris");
+            capitales.push_back("Berna");
+            capitales.push_back("Viena");
+            capitales.push_back("Bruselas");
+            capitales.push_back("Amsterdam");
+            capitales.push_back("Roma");
+            capitales.push_back("Luxemburgo");
+            capitales.push_back("Andorra La Vella");
+            capitales.push_back("Londres");
+            capitales.push_back("Dubai");
+
+            break;
+            
+
+
+
+            
+
+
             
 
 
@@ -199,7 +245,7 @@ void tutorial() {
     cout<<"Bienvenido al tutorial de la herramienta CoDyMe_HospitalSearcher!" << endl;
     cout<<"Esta herramienta le permitira encontrar la distancia mas corta entre dos de nuestros hospitales afiliados" << endl;
     cout<<"Nuestros hospitales se encuentran en las capitales de los paises mas importantes de Sudamerica y Europa " << endl;
-    cout<< "Entre estos 3 continentes, tenemos mas de 30 hospitales a su disposicion!" << endl;
+    cout<< "Entre estos 2 continentes, tenemos mas de 30 hospitales a su disposicion!" << endl;
     cout<<" Elaboremos un ejemplo: " << endl;
     cout<<"Usaremos el continente de Sudamerica, que tiene los siguientes paises:"<<endl;
 
@@ -252,6 +298,7 @@ void ejecucion() {
     cout<< "Introduzca su continente" << endl;
     cout<< "1. SudAmerica" << endl;
     cout<< "2. Europa del Este" << endl;
+    cout<< "3. Europa del Oeste" <<endl;
 
     cin>>continente;
 
@@ -290,6 +337,10 @@ void ejecucion() {
         }
 
        
+
+    } else {
+
+        cout<<"Uy! Resulta que no tenemos una ruta entre estos dos hospitales, pero no se preocupe! Llame al 55749328 para contactarse con el Sr. Brown y conseguir un descuento en su funeral!"<<endl;
 
     }
 
