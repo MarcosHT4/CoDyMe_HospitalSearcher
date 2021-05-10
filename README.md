@@ -35,6 +35,25 @@
 - Seleccione la carpeta que contenga los archivos
 - Diríjase al archivo **CoDyMe_HospitalSearcher.cpp** y compile el archivo en la sección de **Compilar y debuguear**.
 
+## Explicación del Algoritmo
+
+El algoritmo de Dijkstra, es un conocido algoritmo, el cual permite encontrar las distancias más cortas entre los vértices de un grafo.
+Su funcionamiento se basa, en que, a partir de un vértice inicial, el algoritmo viajará a través de los vértices del grafo, hasta haber visitado todo el grafo.
+Cabe destacar que el algoritmo de Dijkstra solo funciona con pesos positivos en las aristas.
+Los pasos que sigue el algoritmo de Dijkstra, son los siguientes: 
+
+- Declarar tres estructuras: Una cola de prioridad, un areglo que guarde las distancias entre vértices, y un arreglo que guarde si los vértices ya han sido visitados.
+- En el arreglo de **visitados** marcar todas las casillas correspondientes a los vértices con infinito (un entero muy grande).
+- En el arreglo de **visitados** marcar la distancia del vértice inical con 0.
+- Visitar a los vecinos del vértice actual
+- Calcular la distancia del vértice vecino
+- Verificar si la distancia es mínima, si es así, guardar la nueva distancia.
+- Repetir los pasos anteriores hasta haber visitado todos los vértices.
+
+En el presente proyecto, se implementó este gran algoritmo, para poder obtener las distancias mínimas entre las diferentes capitales de tres diferentes continentes,
+las cuales contienen sucursales de hospitales. El algoritmo viajará a través de todas las conexiones existentes entre las distintas sucursales, a parir de un punto 
+de inicio; y al finalizar, el algoritmo devolverá la distancia mínima a la sucursal especificada.
+
 
 
 
