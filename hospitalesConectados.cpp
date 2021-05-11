@@ -53,7 +53,19 @@ void dijkstra(int verticeInicial)
 
 }
 
+void deleteGraph() {
+
+    for(int i = 0; i<100000; i++) {
+
+        grafo[i].clear();
+
+    }
+
+}
+
 void llenarGrafo(int continente) {
+
+    deleteGraph();
 
     switch(continente) {
 
@@ -215,8 +227,8 @@ void llenarGrafo(int continente) {
            capitales.push_back("Palestina");
            capitales.push_back("Imperio Romano");
            capitales.push_back("Rodesia");
-           capitales.push_back("Vietnam Del Sur");
            capitales.push_back("Zanzibar");
+           capitales.push_back("Vietnam Del Sur");
 
            break;
 
@@ -357,6 +369,8 @@ void ejecucion() {
 
     capitales.clear();
     ejemplo.clear();
+    deleteGraph();
+    
 
 
     cout<< "Introduzca su continente" << endl;
@@ -434,6 +448,8 @@ void ejecucion() {
 }
 
 void tutorial() {
+
+    deleteGraph();
 
     ejemplo.clear();
 
@@ -514,6 +530,7 @@ void tutorial() {
 void ejemplos() {
 
     capitales.clear();
+    deleteGraph();
 
     cout<<"Digite cual ejemplo quiere visualizar, del 1 al 6"<<endl;
     int ejemplo;
@@ -623,6 +640,7 @@ void ejemplos() {
 
 int main()
 {
+    deleteGraph();
     capitales.clear();
     ejemplo.clear();
 
