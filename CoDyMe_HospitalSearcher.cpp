@@ -375,7 +375,7 @@ void llenarGrafo(int continente) {
             capitales.push_back("Slug Flyer");
             capitales.push_back("Lemor");
             capitales.push_back("Servil");
-            capitales.push_back("Astrolug");  
+            capitales.push_back("Atrolug");  
 
             break;
 
