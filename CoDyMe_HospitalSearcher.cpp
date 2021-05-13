@@ -232,7 +232,7 @@ void llenarGrafo(int continente) {
             cout<<"Introduzca el numero de capitales"<<endl;
             int capitalesAux;
             cin>>capitalesAux;
-            cout<<"Introduzca el numero de conexiones entre las capitaes"<<endl;
+            cout<<"Introduzca el numero de conexiones entre las capitales"<<endl;
             int conexionesAux;
             cin>>conexionesAux;
             cout<<"Introduzca las conexiones entre las capitales (Capital inicio, capital final, distancia)"<<endl;
