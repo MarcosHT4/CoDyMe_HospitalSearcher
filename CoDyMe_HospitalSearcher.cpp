@@ -13,12 +13,15 @@ int fin;
 int regreso;
 int continente;
 int visitados[100000]; 
+int previo[100000];
 int distancia[100000];
+int main();
 
 void dijkstra(int verticeInicial)
 {
     for(int i = 0; i < 100000; i++){
         distancia[i] = INF;
+        previo[i] = -1;
 
     }
     memset(visitados, 0, sizeof(visitados));
@@ -46,10 +49,23 @@ void dijkstra(int verticeInicial)
             if (distancia[vertice] + pesoVecino < distancia[verticeVecino])
             {
                 distancia[verticeVecino] = distancia[vertice] + pesoVecino;
+                previo[verticeVecino] = vertice;
                 colaPrioridad.insert(make_pair(distancia[verticeVecino], verticeVecino));
             }
         }
     }
+
+}
+
+void print(int destino) {
+
+    if(previo[destino]!=-1) {
+
+       print(previo[destino]); 
+
+    }
+
+    cout<<capitales.at(destino)<< " ---> ";
 
 }
 
@@ -207,12 +223,43 @@ void llenarGrafo(int continente) {
             capitales.push_back("Luxemburgo");
             capitales.push_back("Andorra La Vella");
             capitales.push_back("Londres");
-            capitales.push_back("Dubai");
+            capitales.push_back("Dublin");
 
             break;
-            
 
         case 4:
+
+            cout<<"Introduzca el numero de capitales"<<endl;
+            int capitalesAux;
+            cin>>capitalesAux;
+            cout<<"Introduzca el numero de conexiones entre las capitaes"<<endl;
+            int conexionesAux;
+            cin>>conexionesAux;
+            cout<<"Introduzca las conexiones entre las capitales (Capital inicio, capital final, distancia)"<<endl;
+
+            for(int i = 0; i<conexionesAux; i++) {
+
+                int inicio, fin, distanciaAux;
+                cin>>inicio>>fin>>distanciaAux;
+                grafo[inicio].push_back(make_pair(distanciaAux, fin));
+                grafo[fin].push_back(make_pair(distanciaAux, inicio));
+
+            }
+
+            cout<<" Introduzca el nombre de los paises " << endl;
+
+            for(int i = 0; i<capitalesAux; i++) {
+
+                string nombres;
+                cin>>nombres;
+                capitales.push_back(nombres);
+
+            }
+
+            break;    
+            
+
+        case 5:
 
            grafo[0].push_back(make_pair(600, 1));
            grafo[0].push_back(make_pair(432, 2));
@@ -232,7 +279,7 @@ void llenarGrafo(int continente) {
 
            break;
 
-        case 5:
+        case 6:
 
            grafo[0].push_back(make_pair(700, 1));
            grafo[1].push_back(make_pair(50, 2));
@@ -252,7 +299,7 @@ void llenarGrafo(int continente) {
 
            break;  
            
-        case 6:
+        case 7:
 
            grafo[0].push_back(make_pair(60, 1));
            grafo[1].push_back(make_pair(490, 2));
@@ -272,7 +319,7 @@ void llenarGrafo(int continente) {
 
            break;  
 
-        case 7:
+        case 8:
 
            grafo[0].push_back(make_pair(10, 1));
            grafo[1].push_back(make_pair(75, 3));
@@ -292,7 +339,7 @@ void llenarGrafo(int continente) {
 
            break;
 
-        case 8:
+        case 9:
 
            grafo[0].push_back(make_pair(21, 1));
            grafo[1].push_back(make_pair(45, 2));
@@ -312,7 +359,7 @@ void llenarGrafo(int continente) {
 
            break;
 
-        case 9:
+        case 10:
 
             grafo[0].push_back(make_pair(563, 1));
             grafo[1].push_back(make_pair(248, 2));
@@ -331,25 +378,6 @@ void llenarGrafo(int continente) {
             capitales.push_back("Astrolug");  
 
             break;
-
-
-
-           
-
-
-
-
-           
-
-
-
-            
-
-
-            
-
-
-
 
     }
 
@@ -377,6 +405,7 @@ void ejecucion() {
     cout<< "1. SudAmerica" << endl;
     cout<< "2. Europa del Este" << endl;
     cout<< "3. Europa del Oeste" <<endl;
+    cout<< "4. Continente Personalizado" << endl;
 
     cin>>continente;
 
@@ -406,6 +435,10 @@ void ejecucion() {
 
         if(inicio!=fin) {
 
+            print(fin);
+
+            cout<<" x "<<endl;
+
             cout<< "La ruta minima entre el hospital de "<<capitales.at(inicio)<< " y " <<capitales.at(fin)<< " es " << distancia[fin] << " km. "<< endl;
 
         } else {
@@ -424,7 +457,7 @@ void ejecucion() {
 
     
 
-    cout<<"Digite 0 para hacer otra consulta y 1 para salir"<<endl;
+    cout<<"Digite 0 para hacer otra consulta, 1 para volver al menu y 2 para salir"<<endl;
 
     cin>>regreso;
 
@@ -436,6 +469,11 @@ void ejecucion() {
           break;
 
         case 1:
+
+            main();
+            break;  
+
+        case 2:
           cout<<"Muchas gracias por confiar en nosotros! :D" <<endl;
           break;
 
@@ -499,12 +537,14 @@ void tutorial() {
     cout<<ejemplo.at(t)<<endl;
 
     dijkstra(r);
+    print(t);
+    cout<< " x " << endl;
 
     cout<<"Usaremos el algoritmo de Dijkstra, para obtener el camino minimo entre estas dos capitales"<<endl;
     cout<< "La ruta minima entre el hospital de "<<ejemplo.at(r)<< " y " <<ejemplo.at(t)<< " es " << distancia[t] << " km. "<< endl;
     cout<< "Ahora que usted ya conoce la aplicacion, que desea hacer?"<<endl;
 
-    cout<<"Digite 0 para una consulta y 1 para salir"<<endl;
+    cout<<"Digite 0 para una consulta, 1 para volver al menu y 2 para salir"<<endl;
 
     cin>>regreso;
 
@@ -516,6 +556,12 @@ void tutorial() {
           break;
 
         case 1:
+
+            main();
+            break;  
+  
+
+        case 2:
           cout<<"Muchas gracias por confiar en nosotros! :D" <<endl;
           break;
 
@@ -544,37 +590,37 @@ void ejemplos() {
         case 1:
            
            nombreContinente = "Lemuria";
-           llenarGrafo(4);
+           llenarGrafo(5);
            break;
 
         case 2:
 
             nombreContinente = "Atlantida";
-            llenarGrafo(5);
+            llenarGrafo(6);
             break;
 
         case 3:
 
             nombreContinente = "Wakanda";
-            llenarGrafo(6);
+            llenarGrafo(7);
             break;
 
         case 4:
 
             nombreContinente = "Zootopia";
-            llenarGrafo(7);
+            llenarGrafo(8);
             break;    
 
         case 5:
 
             nombreContinente = "GOW";
-            llenarGrafo(8);
+            llenarGrafo(9);
             break;
 
         case 6:
 
             nombreContinente = "Meslu";
-            llenarGrafo(9);
+            llenarGrafo(10);
             break;    
 
 
@@ -596,12 +642,15 @@ void ejemplos() {
     }
 
     dijkstra(0);
+    print(4);
+
+    cout<< " x " << endl;
 
     cout<< "La ruta minima entre el hospital de "<<capitales.at(0)<< " y " <<capitales.at(4)<< " es " << distancia[4] << " km. "<< endl;
 
     cout<< "Ahora que ya conoce los ejemplos, que desea hacer?" << endl;
 
-    cout<<"Digite 0 para una consulta, 1 para ver otro ejemplo y 2 para salir"<<endl;
+    cout<<"Digite 0 para una consulta, 1 para ver otro ejemplo, 2 para volver al menu y 3 para salir"<<endl;
 
     cin>>regreso;
 
@@ -618,9 +667,15 @@ void ejemplos() {
           break;
 
         case 2:
+
+           main();
+           break; 
+
+        case 3:
           
           cout<<"Muchas gracias por confiar en nosotros! :D" <<endl;
           break;
+
 
 
 
@@ -646,7 +701,7 @@ int main()
 
     int menu;
 
-    cout<< "Bienvenido querido cliente! Esta es la plataforma principal para la busqueda de hospitales de la red sudamericana CoDyMe! " << endl;
+    cout<< "Bienvenido querido cliente! Esta es la plataforma principal para la busqueda de hospitales de la red global CoDyMe! " << endl;
 
     cout<<"Seleccione una opcion para continuar" << endl;
 

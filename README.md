@@ -51,7 +51,7 @@ Los pasos que sigue el algoritmo de Dijkstra, son los siguientes:
 - Repetir los pasos anteriores hasta haber visitado todos los vértices.
 
 En el presente proyecto, se implementó este gran algoritmo, para poder obtener las distancias mínimas entre las diferentes capitales de tres diferentes continentes,
-las cuales contienen sucursales de hospitales. El algoritmo viajará a través de todas las conexiones existentes entre las distintas sucursales, a parir de un punto 
+las cuales contienen sucursales de hospitales. El algoritmo viajará a través de todas las conexiones existentes entre las distintas sucursales, a partir de un punto 
 de inicio; y al finalizar, el algoritmo devolverá la distancia mínima a la sucursal especificada.
 
 
